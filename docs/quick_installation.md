@@ -3,7 +3,6 @@
 ## Install dependencies
 
   composer install
-  npm install
 
 ## Create .env file
 
