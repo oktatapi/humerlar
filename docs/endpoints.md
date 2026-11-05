@@ -1,6 +1,9 @@
 # Endpoints
 
 * /api/employees
+* /api/positions
+* /api/projects
+
 * /api/register
 * /api/login
 * /api/logout
@@ -30,7 +33,7 @@ JSON example:
 }
 ```
 
-### Update a employee
+### Update an employee
 
 Endpoint:
 
@@ -47,7 +50,7 @@ JSON content example:
 }
 ```
 
-### Delete a star
+### Delete an employee
 
 Endpoint:
 
@@ -65,6 +68,102 @@ Send a new user data:
     "password_confirmation": "secret"
 }
 ```
+
+## Positions
+
+
+All endpoint have a /api prefix.
+
+| Endpoint | Method | Auth | Description |
+| - | - | - | - |
+| /positions | GET | no | Get all positions |
+| /positions | POST | no | Create position |
+| /positions/:id | PUT | no | Update a position |
+| /positions/:id | DELETE | no | Delete a position |
+
+### Create new position
+
+Endpoint:
+
+* /api/positions
+
+JSON example:
+
+```json
+{
+    "name": "Erős István",
+    "city": "Szeged",
+    "salary": 395,
+    "positionId": 1
+}
+```
+
+### Update a position
+
+Endpoint:
+
+* /api/positions/:id
+
+JSON content example:
+
+```json
+{
+    "name": "developer",
+}
+```
+
+### Delete a position
+
+Endpoint:
+
+* /api/positions/:id
+
+
+## Projects
+
+
+All endpoint have a /api prefix.
+
+| Endpoint | Method | Auth | Description |
+| - | - | - | - |
+| /projects | GET | no | Get all projects |
+| /projects | POST | no | Create project |
+| /projects/:id | PUT | no | Update a project |
+| /projects/:id | DELETE | no | Delete a project |
+
+### Create new project
+
+JSON example:
+
+```json
+{
+    "name": "Tambura",
+    "description": "A software",
+    "startDate": "2026-11-05"
+}
+```
+
+### Update a project
+
+Endpoint:
+
+* /api/projects/:id
+
+JSON content example:
+
+```json
+{
+    "name": "Tambura",
+    "description": "A software",
+    "startDate": "2026-11-05"
+}
+```
+
+### Delete a position
+
+Endpoint:
+
+* /api/projects/:id
 
 ## Login endpoint
 
