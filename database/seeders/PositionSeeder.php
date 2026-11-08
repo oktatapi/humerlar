@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Models\Position;
+
 class PositionSeeder extends Seeder
 {
     /**
@@ -12,6 +14,17 @@ class PositionSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Position::create([
+            'name' => 'fejlesztő',
+            'description' => 'szoftverfejlesztő'
+        ]);
+        Position::create([
+            'name' => 'tesztelő',
+            'description' => 'szoftvertesztelő'
+        ]);
+        Position::create([
+            'name' => 'takarító',
+            'description' => 'irodai takarító'
+        ]);
     }
 }
