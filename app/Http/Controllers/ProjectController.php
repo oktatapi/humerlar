@@ -46,7 +46,7 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, $id)
     {
         $project = Project::find($id);
         $project->update($request->all());
@@ -59,7 +59,7 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function destroy($id)
     {
         $project = Project::destroy($id);
         $project->delete();

@@ -46,9 +46,9 @@ class EmployeeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Employee $employee)
+    public function update(Request $request, $id)
     {
-        $employee = Employee::find($employee->id);
+        $employee = Employee::find($id);
         $employee->update($request->all());
         return response()->json([
             'success' => true,
@@ -59,9 +59,9 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Employee $employee)
+    public function destroy($id)
     {
-        $employee = Employee::find($employee->id);
+        $employee = Employee::find($id);
         $employee->delete();
         return response()->json([
             'success' => true,
