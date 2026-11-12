@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 use App\Models\Project;
@@ -14,10 +14,28 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        Project::create([
-            'name' => 'Pompadúr',
-            'describe' => 'Vállalati weboldal',
-            'startDate' => '2026-11-09'
+        Project::insert([
+            [
+                'name' => 'Pompadúr',
+                'description' => 'Vállalati weboldal',
+                'startDate' => '2026-11-09',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Projekt 2',
+                'description' => 'Vállalati weboldal',
+                'startDate' => '2026-11-09',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Projekct 3',
+                'description' => 'Teszt projekt',
+                'startDate' => '2026-11-09',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }

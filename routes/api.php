@@ -6,6 +6,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EmployeeProjectController;
 
 
 Route::get('/user', function (Request $request) {
@@ -39,3 +40,7 @@ Route::post('/projects', [ProjectController::class, 'store']);
 Route::get('/projects/{id}', [ProjectController::class, 'show']);
 Route::put('/projects/{id}', [ProjectController::class, 'update']);
 Route::delete('/projects/{id}', [ProjectController::class, 'destroy']);
+
+Route::get('/employee-projects', [EmployeeProjectController::class, 'index']);
+Route::post('/employee-projects', [EmployeeProjectController::class, 'store']);
+Route::delete('/employee-projects/{employee}/{project}', [EmployeeProjectController::class, 'destroy']);

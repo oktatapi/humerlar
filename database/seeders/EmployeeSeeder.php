@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 
@@ -32,6 +32,18 @@ class EmployeeSeeder extends Seeder
             'city' => 'Szeged',
             'salary' => 390,
             'positionId' => 3
+        ]);
+        Employee::create([
+            'name' => 'Trón Ferenc',
+            'city' => 'Pécs',
+            'salary' => 397,
+            'positionId' => 1
+        ]);
+        Employee::create([
+            'name' => 'Panda Ernő',
+            'city' => 'Hatvan',
+            'salary' => 392,
+            'positionId' => 2
         ]);
     }
 }

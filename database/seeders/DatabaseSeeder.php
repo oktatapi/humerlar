@@ -33,7 +33,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             EmployeeSeeder::class,
             PositionSeeder::class,
-            ProjectSeeder::class
+            ProjectSeeder::class,
+            EmployeeProjectSeeder::class
         ]);
     }
 }

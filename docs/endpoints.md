@@ -3,13 +3,13 @@
 * /api/employees
 * /api/positions
 * /api/projects
+* /api/employee-projects
 
 * /api/register
 * /api/login
 * /api/logout
 
 ## Employees
-
 
 All endpoint have a /api prefix.
 
@@ -71,7 +71,6 @@ Send a new user data:
 
 ## Positions
 
-
 All endpoint have a /api prefix.
 
 | Endpoint | Method | Auth | Description |
@@ -118,9 +117,7 @@ Endpoint:
 
 * /api/positions/:id
 
-
 ## Projects
-
 
 All endpoint have a /api prefix.
 
@@ -159,11 +156,38 @@ JSON content example:
 }
 ```
 
-### Delete a position
+### Delete a project
 
 Endpoint:
 
 * /api/projects/:id
+
+## Employee-projects endpoint
+
+| Endpoint | Method | Auth | Description |
+| - | - | - | - |
+| /employee-projects | GET | no | Get all all employee-projects |
+| /employee-projects | POST | no | Associate employee to project |
+| /employee-projects/:empId/:projId | DELETE | no | Delete a project from an employee |
+
+### List all employee-projects
+
+* /api/employee-projects
+
+### Associate employee to project
+
+* /api/employee-projects
+
+```json
+{
+    "projectId": 1,
+    "employeeId": 1
+}
+```
+
+### Disassociate employee from project
+
+* /api/employee-projects/:empId/:projId
 
 ## Login endpoint
 
@@ -179,7 +203,6 @@ Send to login user data:
 ```
 
 ## Logout endpoint
-
 
 * /api/logout
 
