@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        User::create([
+        User::updateOrcreate([
             'name' => 'mari',
             'email' => 'mari@valahol.lan',
             'password' => Hash::make('titok')
@@ -34,7 +34,8 @@ class DatabaseSeeder extends Seeder
             EmployeeSeeder::class,
             PositionSeeder::class,
             ProjectSeeder::class,
-            EmployeeProjectSeeder::class
+            EmployeeProjectSeeder::class,
+            UserSeeder::class
         ]);
     }
 }

@@ -23,11 +23,14 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
-Route::get('/employees', [EmployeeController::class, 'index']);
-Route::post('/employees', [EmployeeController::class, 'store']);
+Route::get('/employees', [EmployeeController::class, 'index'])
+    ->middleware(['auth:sanctum', 'ability:employees:read']);
+Route::post('/employees', [EmployeeController::class, 'store'])
+    ->middleware(['auth:sanctum', 'ability:employees:create']);
 Route::get('/employees/{id}', [EmployeeController::class, 'show']);
 Route::put('/employees/{id}', [EmployeeController::class, 'update']);
-Route::delete('/employees/{id}', [EmployeeController::class, 'destroy']);
+Route::delete('/employees/{id}', [EmployeeController::class, 'destroy'])
+    ->middleware(['auth:sanctum', 'ability:employees:delete']);
 
 Route::get('/positions', [PositionController::class, 'index']);
 Route::post('/positions', [PositionController::class, 'store']);

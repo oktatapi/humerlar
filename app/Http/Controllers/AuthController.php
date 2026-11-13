@@ -22,7 +22,8 @@ class AuthController extends Controller
         $token = $user->createToken('sajatToken')->plainTextToken;
         $response = [
             'user' => $user,
-            'token' => $token
+            'token' => $token,
+            'role' => $user->role
         ];
         return response()->json([
             'successs' => true,

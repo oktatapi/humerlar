@@ -3,7 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Database\Factories\UserFactory;
+// use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -29,5 +29,23 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function getTokenAbilities(): array {
+        return match($this->role) {
+            'super' => ['*'],
+            'admin' => [
+                'employee:read', 
+                'employee:create', 
+                'employee:update', 
+                'employee:delete', 
+                'position:read', 
+                'position:create', 
+                'position:update', 
+                'position:delete'
+                ],
+            'user' => ['employee:read'],
+            default => []
+        };
     }
 }
